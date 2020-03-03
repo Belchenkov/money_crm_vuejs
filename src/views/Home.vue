@@ -1,6 +1,6 @@
 <template>
   <div>
-    text
+    texttexttexttexttexttexttexttexttexttexttexttexttexttexttext
   </div>
 </template>
 
