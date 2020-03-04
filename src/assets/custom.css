@@ -4,3 +4,7 @@ body {
     font-family: 'Cuprum', sans-serif;
     font-size: 18px;
 }
+
+.navbar-time {
+    margin-left: 150px;
+}
