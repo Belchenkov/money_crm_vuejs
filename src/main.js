@@ -7,10 +7,14 @@ import store from './store'
 // Materialize
 import 'materialize-css/dist/js/materialize.min'
 
-Vue.config.productionTip = false
+// Filters
+import dateFilter from "./filters/date.filter";
+Vue.filter('date', dateFilter);
+
+Vue.config.productionTip = false;
 
 new Vue({
   router,
   store,
   render: h => h(App)
-}).$mount('#app')
+}).$mount('#app');

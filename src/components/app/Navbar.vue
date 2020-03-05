@@ -7,7 +7,7 @@
                 </a>
                 <span class="black-text navbar-time">
                     <i class="material-icons left">access_time</i>
-                    12.12.12
+                    {{ date | date('datetime') }}
                 </span>
             </div>
 
@@ -46,10 +46,24 @@
 <script>
     export default {
         name: "Navbar",
+        data: () => ({
+            date: new Date(),
+            interval: null,
+            dropdown: null
+        }),
         mounted() {
-            M.Dropdown.init(this.$refs.dropdown, {
+            this.interval = setInterval(() => {
+                this.date = new Date();
+            }, 1000);
+
+            this.dropdown = M.Dropdown.init(this.$refs.dropdown, {
                 constrainWidth: false
             });
+        },
+        beforeDestroy() {
+            clearInterval(this.interval);
+
+            if (this.dropdown && this.dropdown.destroy) this.dropdown.destroy();
         },
         methods: {
             logout() {
