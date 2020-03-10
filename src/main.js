@@ -12,6 +12,10 @@ import 'materialize-css/dist/js/materialize.min'
 import dateFilter from "./filters/date.filter";
 Vue.filter('date', dateFilter);
 
+// Plugins
+import messagePlugin from './utils/message.plugin';
+Vue.use(messagePlugin);
+
 Vue.config.productionTip = false;
 Vue.use(Vuelidate);
 
