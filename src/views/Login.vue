@@ -76,7 +76,7 @@
       if (messages[this.$route.query.message]) this.$message(messages[this.$route.query.message]);
     },
     methods: {
-      submitHandler() {
+      async submitHandler() {
         if (this.$v.$invalid) {
           this.$v.$touch();
           return false;
@@ -86,6 +86,11 @@
           email: this.email,
           password: this.password
         };
+
+        try {
+          await this.$store.dispatch('login', formData);
+          await this.$router.push('/');
+        } catch (err) {}
       }
     }
   }
