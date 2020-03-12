@@ -95,7 +95,7 @@
       agree: {checked: v => v}
     },
     methods: {
-      submitHandler() {
+      async submitHandler() {
         if (this.$v.$invalid) {
           this.$v.$touch();
           return false;
@@ -107,6 +107,10 @@
           name: this.name,
         };
 
+        try {
+          await this.$store.dispatch('register', formData);
+          await this.$router.push('/');
+        } catch (err) {}
       }
     }
   }
