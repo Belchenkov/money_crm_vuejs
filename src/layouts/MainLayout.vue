@@ -1,6 +1,5 @@
 <template>
     <div class="app-main-layout">
-
         <Navbar @click="isOpen = !isOpen" />
 
         <Sidebar v-model="isOpen" />
@@ -21,7 +20,7 @@
 
 <script>
     import Sidebar from "../components/app/Sidebar";
-    import Navbar from "../components/app/Navbar";
+    import Navbar from "../components/Navbar";
 
     export default {
         name: "MainLayout",
@@ -31,6 +30,11 @@
         components: {
             Sidebar,
             Navbar
+        },
+        async mounted() {
+            if (!Object.keys(this.$store.getters.info).length) {
+                await this.$store.dispatch('fetchInfo');
+            }
         }
     }
 </script>
