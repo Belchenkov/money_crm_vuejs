@@ -20,7 +20,10 @@ Vue.filter('currency', currencyFilter);
 
 // Plugins
 import messagePlugin from './utils/message.plugin';
+import Paginate from 'vuejs-paginate';
 Vue.use(messagePlugin);
+Vue.component('Paginate', Paginate);
+
 
 // Directives
 import tooltipDirective from './directives/tooltip.directive';
