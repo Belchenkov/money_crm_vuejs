@@ -15,8 +15,11 @@ import 'materialize-css/dist/js/materialize.min'
 // Filters
 import dateFilter from "./filters/date.filter";
 import currencyFilter from "./filters/currency.filter";
+import localizeFilter from "./filters/localize.filter";
+
 Vue.filter('date', dateFilter);
 Vue.filter('currency', currencyFilter);
+Vue.filter('localize', localizeFilter);
 
 // Plugins
 import messagePlugin from './utils/message.plugin';
