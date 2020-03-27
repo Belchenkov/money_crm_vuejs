@@ -1,0 +1,11 @@
+{
+  "ProfileTitle": "Профиль",
+  "MessageRequired": "Обязательное поле",
+  "UpdateButton": "Обновить",
+  "Name": "Имя",
+  "MenuBill": "Счет",
+  "MenuHistory": "История",
+  "MenuPlanning": "Планирование",
+  "MenuRecord": "Новая запись",
+  "MenuCategory": "Категории"
+}

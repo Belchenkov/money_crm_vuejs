@@ -17,16 +17,18 @@
 </template>
 
 <script>
+    import localizeFilter from "../../filters/localize.filter";
+
     export default {
         name: "Sidebar",
         props: ['value'],
         data: () => ({
             links: [
-                { title: 'Счет', url: '/', icon: 'account_balance_wallet', exact: true },
-                { title: 'История', url: '/history', icon: 'history' },
-                { title: 'Планирование', url: '/planning', icon: 'av_timer' },
-                { title: 'Новая запись', url: '/record', icon: 'create' },
-                { title: 'Категории', url: '/categories', icon: 'book' }
+                { title: localizeFilter('MenuBill'), url: '/', icon: 'account_balance_wallet', exact: true },
+                { title: localizeFilter('MenuHistory'), url: '/history', icon: 'history' },
+                { title: localizeFilter('MenuPlanning'), url: '/planning', icon: 'av_timer' },
+                { title: localizeFilter('MenuRecord'), url: '/record', icon: 'create' },
+                { title: localizeFilter('MenuCategory'), url: '/categories', icon: 'book' }
             ]
         })
     }
